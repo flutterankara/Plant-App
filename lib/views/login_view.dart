@@ -10,6 +10,11 @@ class LogiView extends StatefulWidget {
 class _LogiViewState extends State<LogiView> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Scaffold(body: Column(children: [],),));
+    return SafeArea(
+        child: Scaffold(
+      body: Column(
+        children: [],
+      ),
+    ));
   }
 }

@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-class LogiView extends StatefulWidget {
-  const LogiView({Key? key}) : super(key: key);
+class LoginView extends StatefulWidget {
+  const LoginView({Key? key}) : super(key: key);
 
   @override
-  State<LogiView> createState() => _LogiViewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _LogiViewState extends State<LogiView> {
+class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+          child: Column(
         children: [],
-      ),
+      )),
     ));
   }
 }

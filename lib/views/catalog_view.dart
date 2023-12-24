@@ -40,49 +40,47 @@ class _CategoriesPage extends State<CategoriesView> {
     var cellHeight = _width;
     var _aspectRatio = _width / cellHeight;
 
-    return WillPopScope(
-        onWillPop: _requestPop,
-        child: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            backgroundColor: Colors.blue,
-            centerTitle: true,
-            title: const Text('Categories'),
-          ),
-          body: Container(
-            margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
-            child: Stack(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).size.width * 0.01),
-                  child: GridView.count(
-                    crossAxisCount: _crossAxisCount,
-                    shrinkWrap: true,
-                    childAspectRatio: _aspectRatio,
-                    // childAspectRatio: 0.64,
-                    primary: false,
-                    children: List.generate(categoryModelList.length, (index) {
-                      return BackGroundTile(
-                        subCategoryModel: categoryModelList[index],
-                        cellHeight: cellHeight,
-                      );
-                    }),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    margin: const EdgeInsets.only(bottom: 2),
-                    width: viewWidth,
-                    height: 5,
-                    color: Colors.blue,
-                  ),
-                )
-              ],
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+        title: const Text('Categories'),
+      ),
+      body: Container(
+        margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
+        child: Stack(
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.width * 0.01),
+              child: GridView.count(
+                crossAxisCount: _crossAxisCount,
+                shrinkWrap: true,
+                childAspectRatio: _aspectRatio,
+                // childAspectRatio: 0.64,
+                primary: false,
+                children: List.generate(categoryModelList.length, (index) {
+                  return BackGroundTile(
+                    subCategoryModel: categoryModelList[index],
+                    cellHeight: cellHeight,
+                  );
+                }),
+              ),
             ),
-          ),
-        ));
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                margin: const EdgeInsets.only(bottom: 2),
+                width: viewWidth,
+                height: 5,
+                color: Colors.blue,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
 

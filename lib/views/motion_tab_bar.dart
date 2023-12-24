@@ -6,6 +6,7 @@ import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 import 'package:plant/views/diary_view/gunluk_view.dart';
 import 'package:plant/views/home_view.dart';
 import 'package:plant/views/problem_solution_view/problem_solution_view.dart';
+import 'package:plant/views/search_view.dart';
 
 import 'catalog_views/catalog_view.dart';
 
@@ -24,7 +25,7 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
     const HomeView(),
     const CategoriesView(),
     const GunlukView(),
-    const HomeView(),
+    const SearchView(),
     const ProblemSolutionView(),
   ];
 
@@ -76,7 +77,7 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
             ),
             Container(
               child: const Center(
-                child: HomeView(),
+                child: SearchView(),
               ),
             ),
             Container(

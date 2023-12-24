@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:plant/views/motion_tab_bar.dart';
+import 'package:provider/provider.dart';
+
+import 'core/auth_manager.dart';
 
 late Box userBox;
 Future<void> main() async {
   await Hive.initFlutter();
   userBox = await Hive.openBox("user");
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    Provider<AuthenticationManager>(
+      create: (context) => AuthenticationManager(context: context),
+      lazy: true,
+    )
+  ], child: MyApp()));
 }
 
 class MyApp extends StatefulWidget {

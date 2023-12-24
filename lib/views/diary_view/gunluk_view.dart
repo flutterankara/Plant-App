@@ -87,13 +87,16 @@ class _HomeViewState extends State<GunlukView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DiaryAddView(),
-            ));
-      }),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.blue,
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DiaryAddView(),
+                ));
+          },
+          child: Icon(Icons.add)),
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text("Gunluk"),

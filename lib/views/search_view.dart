@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ProblemSolutionView extends StatefulWidget {
-  const ProblemSolutionView({super.key});
+class SearchView extends StatefulWidget {
+  const SearchView({super.key});
 
   @override
-  State<ProblemSolutionView> createState() => _ProblemSolutionViewState();
+  State<SearchView> createState() => _SearchViewState();
 }
 
-class _ProblemSolutionViewState extends State<ProblemSolutionView> {
+class _SearchViewState extends State<SearchView> {
   @override
   final TextEditingController _searchController = TextEditingController();
   bool isSearchClicked = false;
@@ -53,7 +53,7 @@ class _ProblemSolutionViewState extends State<ProblemSolutionView> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         centerTitle: true,
-        title: const Text("Question/Answer View"),
+        title: const Text("Search View"),
       ),
       // body parts
       body: SingleChildScrollView(

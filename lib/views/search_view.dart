@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant/models/FlowerModel.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
@@ -8,6 +9,40 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
+  List<FlowerModel> flowerList = [
+    FlowerModel(1, 'Papatya', 'Beyaz ve sarı renkli, sevimli bir çiçek.',
+        'Çok yıllık', 'Bahçe Çiçeği'),
+    FlowerModel(2, 'Gül', 'Kırmızı renkli, güzel ve kokulu bir çiçek.',
+        'Çok yıllık', 'Kesme Çiçek'),
+    FlowerModel(3, 'Lavanta', 'Mor renkli, hoş kokulu bir çiçek.', 'Çok yıllık',
+        'Aromatik Çiçek'),
+    FlowerModel(4, 'Gardenya', 'Beyaz renkli, yoğun kokulu bir çiçek.',
+        'Çok yıllık', 'Süs Bitkisi'),
+    FlowerModel(5, 'Orkide', 'Farklı renk ve türleri olan egzotik bir çiçek.',
+        'Çok yıllık', 'Orman Çiçeği'),
+    FlowerModel(6, 'Menekşe', 'Mavi, beyaz veya mor renkli, zarif bir çiçek.',
+        'Yıllık', 'Bahçe Bitkisi'),
+    FlowerModel(
+        7,
+        'Süsen',
+        'Beyaz veya sarı renkli, baharın habercisi bir çiçek.',
+        'Yıllık',
+        'Doğal Bitki'),
+    FlowerModel(
+        8,
+        'Zambak',
+        'Beyaz, sarı, pembe veya kırmızı renkli, zarif bir çiçek.',
+        'Çok yıllık',
+        'Kesme Çiçek'),
+    FlowerModel(
+        9,
+        'Krizantem',
+        'Sonbahar çiçeği olarak bilinen renkli bir çiçek.',
+        'Yıllık',
+        'Bahçe Çiçeği'),
+    FlowerModel(10, 'Sardunya', 'Renkli ve hoş kokulu bir yaz çiçeği.',
+        'Yıllık', 'Balkon Çiçeği'),
+  ];
   @override
   final TextEditingController _searchController = TextEditingController();
   bool isSearchClicked = false;
@@ -72,14 +107,17 @@ class _SearchViewState extends State<SearchView> {
               ),
             ),
             ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: filteredItems.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(filteredItems[index]),
-                  );
-                }),
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: flowerList.length,
+              itemBuilder: (context, index) {
+                String flowerName = flowerList[index].name;
+
+                return ListTile(
+                  title: Text(flowerName),
+                );
+              },
+            )
           ],
         ),
       ),

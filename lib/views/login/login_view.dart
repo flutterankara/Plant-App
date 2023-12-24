@@ -9,6 +9,8 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,9 +34,10 @@ class _LoginViewState extends State<LoginView> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
+                controller: usernameController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Email',
+                    labelText: 'Username',
                     hintText: ''),
               ),
             ),
@@ -43,6 +46,7 @@ class _LoginViewState extends State<LoginView> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -68,7 +72,9 @@ class _LoginViewState extends State<LoginView> {
                   color: Color.fromRGBO(48, 77, 48, 1),
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  //
+                },
                 child: Text(
                   'Login',
                   style: TextStyle(color: Colors.white, fontSize: 25),

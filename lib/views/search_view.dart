@@ -57,11 +57,11 @@ class _SearchViewState extends State<SearchView> {
     'Elon Musk',
   ];
 
-  List<String> filteredItems = [];
+  List<FlowerModel> filteredItems = [];
   @override
   void initState() {
     super.initState();
-    filteredItems = List.from(items);
+    filteredItems = List.from(flowerList);
   }
 
   void _onSearchChanged(String value) {
@@ -73,11 +73,11 @@ class _SearchViewState extends State<SearchView> {
 
   void myFilterItems() {
     if (searchText.isEmpty) {
-      filteredItems = List.from(items);
+      filteredItems = List.from(flowerList);
     } else {
-      filteredItems = items
-          .where(
-              (item) => item.toLowerCase().contains(searchText.toLowerCase()))
+      filteredItems = flowerList
+          .where((item) =>
+              item.name.toLowerCase().contains(searchText.toLowerCase()))
           .toList();
     }
   }
@@ -109,9 +109,9 @@ class _SearchViewState extends State<SearchView> {
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: flowerList.length,
+              itemCount: filteredItems.length,
               itemBuilder: (context, index) {
-                String flowerName = flowerList[index].name;
+                String flowerName = filteredItems[index].name;
 
                 return ListTile(
                   title: Text(flowerName),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant/views/login/register_view.dart';
+import 'package:plant/views/motion_tab_bar.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -73,7 +74,11 @@ class _LoginViewState extends State<LoginView> {
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  //
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MotionTabBarPage(),
+                      ));
                 },
                 child: Text(
                   'Login',

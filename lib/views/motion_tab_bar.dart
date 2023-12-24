@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
-import 'package:plant/views/gunluk_view.dart';
+import 'package:plant/views/diary_view/gunluk_view.dart';
 import 'package:plant/views/home_view.dart';
+import 'package:plant/views/problem_solution_view/problem_solution_view.dart';
 
 import 'catalog_views/catalog_view.dart';
 
@@ -23,6 +24,8 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
     const HomeView(),
     const CategoriesView(),
     const GunlukView(),
+    const HomeView(),
+    const ProblemSolutionView(),
   ];
 
   @override
@@ -69,7 +72,6 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
               ),
             ),
             Container(
-              // color: Colors.red,
               child: const GunlukView(),
             ),
             Container(
@@ -78,33 +80,24 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
               ),
             ),
             Container(
-              // color: Colors.red,
-              child: const HomeView(),
+              child: const ProblemSolutionView(),
             ),
-            // IndexedStack(
-            //   index: _controller!.index,
-            //   children: screens,
-            // ),
           ],
-          // child: IndexedStack(
-          //   index: _controller!.index,
-          //   children: screens,
-          // ),
         ),
         bottomNavigationBar: MotionTabBar(
           controller: _controller,
-          labels: ["Home", "Kategori", "Sepetim", "Arama", "Profil"],
+          labels: ["Home", "Categories", "Diary", "Search", "Q/A"],
           initialSelectedTab: 'Home',
-          tabIconColor: Colors.orange,
-          tabSelectedColor: Colors.orange,
+          tabIconColor: Colors.blue,
+          tabSelectedColor: Colors.blue,
           icons: const [
             Icons.home_outlined,
             CupertinoIcons.cube_box,
-            Icons.shopping_cart,
+            Icons.book_sharp,
             Icons.search,
-            Icons.account_circle
+            Icons.question_answer_outlined
           ],
-          textStyle: const TextStyle(color: Colors.orange),
+          textStyle: const TextStyle(color: Colors.blue),
           onTabItemSelected: (int value) {
             setState(() {
               _controller!.index = value;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant/views/diary_view/diary_add_view.dart';
 
 class GunlukView extends StatefulWidget {
   const GunlukView({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _HomeViewState extends State<GunlukView> {
   @override
   void initState() {
     super.initState();
-    // Tüm liste elemanlarını başlangıçta filtelenmiş listeye ekleyin
+
     list = [
       1,
       2,
@@ -71,12 +72,10 @@ class _HomeViewState extends State<GunlukView> {
 
   void _filterList(String searchText) {
     setState(() {
-      // Arama metni boşsa, tüm listeyi göster
       if (searchText.isEmpty) {
         filteredList.clear();
         filteredList.addAll(list);
       } else {
-        // Arama metni doluysa, listeyi filtrele
         filteredList.clear();
         filteredList.addAll(
           list.where((element) => element.toString().contains(searchText)),
@@ -88,7 +87,15 @@ class _HomeViewState extends State<GunlukView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DiaryAddView(),
+            ));
+      }),
       appBar: AppBar(
+        backgroundColor: Colors.blue,
         title: Text("Gunluk"),
         centerTitle: true,
       ),

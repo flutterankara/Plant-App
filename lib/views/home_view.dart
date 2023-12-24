@@ -64,9 +64,14 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerScreen(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
+      drawer: const DrawerScreen(),
       appBar: AppBar(
-        title: Text("Home View"),
+        backgroundColor: Colors.blue,
+        title: const Text("Home View"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

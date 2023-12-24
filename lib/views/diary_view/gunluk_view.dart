@@ -9,79 +9,16 @@ class GunlukView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<GunlukView> {
-  List<int> list = [];
+  List<String> list = [
+    "https://www.bugday.org/blog/wp-content/uploads/2020/11/A1B1-bca0xL._AC_SL1500_.jpg",
+    "https://ideacdn.net/idea/ge/96/myassets/blogs/flower-garden.jpg?revision=1678962649",
+  ];
   TextEditingController _searchController = TextEditingController();
   List<int> filteredList = [];
 
   @override
   void initState() {
     super.initState();
-
-    list = [
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-      1,
-      2,
-      3,
-      4,
-    ];
-    filteredList.addAll(list);
-  }
-
-  void _filterList(String searchText) {
-    setState(() {
-      if (searchText.isEmpty) {
-        filteredList.clear();
-        filteredList.addAll(list);
-      } else {
-        filteredList.clear();
-        filteredList.addAll(
-          list.where((element) => element.toString().contains(searchText)),
-        );
-      }
-    });
   }
 
   @override
@@ -115,11 +52,10 @@ class _HomeViewState extends State<GunlukView> {
                     icon: Icon(Icons.clear),
                     onPressed: () {
                       _searchController.clear();
-                      _filterList('');
                     },
                   ),
                 ),
-                onChanged: _filterList,
+                onChanged: null,
               ),
             ),
             GridView.builder(
@@ -130,7 +66,7 @@ class _HomeViewState extends State<GunlukView> {
               ),
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 4, // 4 tane kare blok
+              itemCount: 12, // 4 tane kare blok
               itemBuilder: (context, index) {
                 return buildBlock(index);
               },
@@ -147,9 +83,8 @@ class _HomeViewState extends State<GunlukView> {
         height: 55,
         color: Colors.green,
         child: Center(
-          child: Text(
-            "Block ${index + 1}",
-            style: TextStyle(color: Colors.white),
+          child: Image.network(
+            list[index % list.length],
           ),
         ),
       ),

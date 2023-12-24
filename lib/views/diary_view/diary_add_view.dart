@@ -28,7 +28,7 @@ class _DiaryAddViewState extends State<DiaryAddView> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         centerTitle: true,
-        title: Text("Diary Adder"),
+        title: const Text("Diary Adder"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -39,15 +39,11 @@ class _DiaryAddViewState extends State<DiaryAddView> {
               child: Container(
                 width: 200,
                 height: 150,
-                /*decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(50.0)),*/
                 child: img != null ? Image.file(img!) : Container(),
               ),
             ),
           ),
-          Padding(
-            //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: TextField(
               decoration: InputDecoration(
@@ -56,9 +52,9 @@ class _DiaryAddViewState extends State<DiaryAddView> {
                   hintText: ''),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-                left: 15.0, right: 15.0, top: 15, bottom: 0),
+          const Padding(
+            padding:
+                EdgeInsets.only(left: 15.0, right: 15.0, top: 15, bottom: 0),
             //padding: EdgeInsets.symmetric(horizontal: 15),
             child: TextField(
               obscureText: true,
@@ -76,13 +72,13 @@ class _DiaryAddViewState extends State<DiaryAddView> {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Color.fromRGBO(48, 77, 48, 1),
+                  color: const Color.fromRGBO(48, 77, 48, 1),
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
                   pickImageGalery(ImageSource.gallery);
                 },
-                child: Text(
+                child: const Text(
                   'Add Photo',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
@@ -93,17 +89,17 @@ class _DiaryAddViewState extends State<DiaryAddView> {
             height: 50,
             width: 250,
             decoration: BoxDecoration(
-                color: Color.fromRGBO(48, 77, 48, 1),
+                color: const Color.fromRGBO(48, 77, 48, 1),
                 borderRadius: BorderRadius.circular(20)),
             child: TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Create Diary',
                 style: TextStyle(color: Colors.white, fontSize: 25),
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 130,
           ),
         ],

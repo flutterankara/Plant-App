@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
+import 'package:plant/views/gunluk_view.dart';
 import 'package:plant/views/home_view.dart';
 
 import 'catalog_views/catalog_view.dart';
@@ -21,6 +22,7 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
   final screens = [
     const HomeView(),
     const CategoriesView(),
+    const GunlukView(),
   ];
 
   @override
@@ -68,7 +70,7 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
             ),
             Container(
               // color: Colors.red,
-              child: const HomeView(),
+              child: const GunlukView(),
             ),
             Container(
               child: const Center(

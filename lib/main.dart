@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:plant/views/catalog_view.dart';
 import 'package:plant/views/motion_tab_bar.dart';
+import 'views/gunluk_view.dart';
 
 late Box userBox;
 Future<void> main() async {
@@ -28,7 +30,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MotionTabBarPage(),
+      home: GunlukView(),
     );
   }
 }

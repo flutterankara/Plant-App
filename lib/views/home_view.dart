@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 
 import 'drawer_widget.dart';
 
@@ -80,7 +81,9 @@ class _HomeViewState extends State<HomeView> {
 
                 return Card(
                   child: Container(
-                      height: 55, color: Colors.green, child: Text("${i}")),
+                      height: context.sized.dynamicHeight(0.2),
+                      color: Colors.green,
+                      child: Center(child: Text("${i}"))),
                 );
               },
             )

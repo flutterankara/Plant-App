@@ -60,7 +60,15 @@ class _DrawerScreenState extends State<DrawerScreen> {
             height: 10,
           ),
           DrawerIconAndTitle(
-            title: 'İmza Bekleyenler',
+            title: 'Profilim',
+            onTap: () async {},
+          ),
+          Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          DrawerIconAndTitle(
+            title: 'Problemlerim',
             onTap: () async {},
           ),
           Divider(),
@@ -68,7 +76,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
             height: 20,
           ),
           DrawerIconAndTitle(
-            title: 'İmzaladıklarım',
+            title: 'Günlük',
             onTap: () async {},
           ),
           Divider(),
@@ -76,19 +84,11 @@ class _DrawerScreenState extends State<DrawerScreen> {
             height: 20,
           ),
           DrawerIconAndTitle(
-            title: 'Bildirimler',
-            onTap: () async {},
-          ),
-          Divider(),
-          const SizedBox(
-            height: 20,
-          ),
-          DrawerIconAndTitle(
-            title: 'Mesajlar',
+            title: 'Kategori',
             onTap: () async {},
           ),
           const SizedBox(
-            height: 160,
+            height: 180,
           ),
           DrawerIconAndTitle(
             title: 'Çıkış',

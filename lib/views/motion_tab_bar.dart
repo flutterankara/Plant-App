@@ -5,6 +5,8 @@ import 'package:motion_tab_bar_v2/motion-tab-bar.dart';
 import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 import 'package:plant/views/home_view.dart';
 
+import 'catalog_views/catalog_view.dart';
+
 class MotionTabBarPage extends StatefulWidget {
   MotionTabBarPage({super.key});
 
@@ -18,6 +20,7 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
 
   final screens = [
     const HomeView(),
+    const CategoriesView(),
   ];
 
   @override
@@ -56,25 +59,25 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
           children: [
             Container(
               // color: Colors.red,
-              child: HomeView(),
+              child: const HomeView(),
             ),
             Container(
-              child: Center(
+              child: const Center(
+                child: CategoriesView(),
+              ),
+            ),
+            Container(
+              // color: Colors.red,
+              child: const HomeView(),
+            ),
+            Container(
+              child: const Center(
                 child: HomeView(),
               ),
             ),
             Container(
               // color: Colors.red,
-              child: HomeView(),
-            ),
-            Container(
-              child: Center(
-                child: HomeView(),
-              ),
-            ),
-            Container(
-              // color: Colors.red,
-              child: HomeView(),
+              child: const HomeView(),
             ),
             // IndexedStack(
             //   index: _controller!.index,
@@ -99,7 +102,7 @@ class _MotionTabBarPageState extends State<MotionTabBarPage>
             Icons.search,
             Icons.account_circle
           ],
-          textStyle: TextStyle(color: Colors.orange),
+          textStyle: const TextStyle(color: Colors.orange),
           onTabItemSelected: (int value) {
             setState(() {
               _controller!.index = value;
